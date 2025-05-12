@@ -1,16 +1,16 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-
-import os
-import pandas as pd
 import yfinance as yf
+import pandas as pd
+import os
+
 
 # =============================================================================
 # Constants
 # =============================================================================
-SYMBOLS = 'AAPL', 'AMZN', 'GOOGL', 'META', 'MSFT', 'NVDA', 'TSLA'
-T_PERIOD = '1d'
-T_INTERVAL = '1h'
+symbols = 'AAPL', 'AMZN', 'GOOGL', 'META', 'MSFT', 'NVDA', 'TSLA'
+period = '1d'
+interval = '1h'
 
 # =============================================================================
 # Timestamp
@@ -25,16 +25,16 @@ if not os.path.isdir("csv"):
     os.makedirs("csv")
 
 # =============================================================================
-# Filter constants so filesystem friendly, i.e. no spaces and commas.
+# Filter variable so filesystem friendly, i.e. no spaces and commas.
 # ft = "friendly tickers"
 # =============================================================================
-ft = '-'.join(SYMBOLS)
+ft = '-'.join(symbols)
 
 # =============================================================================
 # OHLC + Volumme Price Data
 # =============================================================================
-df_index = yf.download(f"{SYMBOLS}", group_by='ticker',
-                       period=f"{T_PERIOD}", interval=f"{T_INTERVAL}",
+df_index = yf.download(f"{symbols}", group_by='ticker',
+                       period=f"{period}", interval=f"{interval}",
                        rounding=True)
 
 # =============================================================================
@@ -49,9 +49,9 @@ df_index = yf.download(f"{SYMBOLS}", group_by='ticker',
 # =============================================================================
 # Export DataFrame to .csv and make file name string
 # =============================================================================
-ft = '-'.join(SYMBOLS)
+ft = '-'.join(symbols)
 df_index.to_csv(
-    f"csv/{ft}_INDEX_{T_PERIOD}_{T_INTERVAL}_from_{c_datetime}.csv")
+    f"csv/{ft}_INDEX_{period}_{interval}_from_{c_datetime}.csv")
 
 # =============================================================================
 # A Collection Of Financial fetches.
@@ -59,28 +59,28 @@ df_index.to_csv(
 # =============================================================================
 # Single Ticker Variables And Constants
 # =============================================================================
-F_SYM = 'SPY'
-S_SYM = 'TSLA'
+f_symbols = 'SPY'
+s_symbols = 'TSLA'
 
-df_stat_f = yf.Ticker(f"{F_SYM}")
-df_stat = yf.Ticker(f"{S_SYM}")
+df_stat_f = yf.Ticker(f"{f_symbols}")
+df_stat = yf.Ticker(f"{s_symbols}")
 
 # =============================================================================
 # Multiple Ticker Variables And Constants
 # =============================================================================
 # =============================================================================
-# F_SYM = 'SPY', 'VTI'
-# S_SYM = 'TSLA', 'AAPL'
+# f_symbols = 'SPY', 'VTI'
+# s_symbols = 'TSLA', 'AAPL'
 #
-# df_stat_f = yf.Tickers(f"{F_SYM}")
-# df_stat = yf.Tickers(f"{S_SYM}")
+# df_stat_f = yf.Tickers(f"{f_symbols}")
+# df_stat = yf.Tickers(f"{s_symbols}")
 # =============================================================================
 
 # =============================================================================
 # Clean tickers to be file name friendly
 # =============================================================================
-cfft = '-'.join(F_SYM)
-cft = '-'.join(S_SYM)
+cfft = '-'.join(f_symbols)
+cft = '-'.join(s_symbols)
 
 # =============================================================================
 # Info
