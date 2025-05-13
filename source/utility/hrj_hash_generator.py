@@ -1,22 +1,43 @@
 #!/usr/bin/env python3
-
+# -*- coding: utf-8 -*-
 import random
 import secrets
 
 
-def hrj_hash_generator():
-    initial_generation_hex = secrets.token_hex(32768)
-    initial_generation_url_safe = secrets.token_hex(32768)
-    initial_bucket = initial_generation_hex + initial_generation_url_safe
-    shuffled_bucket = random.sample(initial_bucket, k=65536)
-    l_bucket = list(shuffled_bucket)
-    shaken_bucket = random.sample(l_bucket, k=65536)
-    n_char = int((input
-                  ("How many characters do you want in the generated hash?: ")))
-    hash_pick = random.sample(shaken_bucket, k=n_char)
-    generated_hash = "".join(hash_pick)
-    print(generated_hash)
-    return generated_hash
+def hhg():
+    random_bucket_01 = secrets.token_urlsafe(4096)
+    random_bucket_02 = secrets.token_urlsafe(4096)
+    cumulative_bucket_01 = random_bucket_01 + random_bucket_02
+    del random_bucket_01, random_bucket_02
+    random_bucket_03 = secrets.token_urlsafe(4096)
+    cumulative_bucket_02 = cumulative_bucket_01 + random_bucket_03
+    del random_bucket_03, cumulative_bucket_01
+    random_bucket_04 = secrets.token_urlsafe(4096)
+    cumulative_bucket_03 = cumulative_bucket_02 + random_bucket_04
+    del random_bucket_04, cumulative_bucket_02
+    random_bucket_05 = secrets.token_urlsafe(4096)
+    cumulative_bucket_04 = cumulative_bucket_03 + random_bucket_05
+    del cumulative_bucket_03, random_bucket_05
+    random_bucket_06 = secrets.token_urlsafe(4096)
+    cumulative_bucket_05 = cumulative_bucket_04 + random_bucket_06
+    del cumulative_bucket_04, random_bucket_06
+    random_bucket_07 = secrets.token_urlsafe(4096)
+    cumulative_bucket_06 = cumulative_bucket_05 + random_bucket_07
+    del cumulative_bucket_05, random_bucket_07
+    random_bucket_08 = secrets.token_urlsafe(4096)
+    cumulative_bucket_07 = cumulative_bucket_06 + random_bucket_08
+    del cumulative_bucket_06, random_bucket_08
+    random_bucket_09 = secrets.token_urlsafe(4096)
+    cumulative_bucket_08 = cumulative_bucket_07 + random_bucket_09
+    del cumulative_bucket_07, random_bucket_09
+    random_bucket_10 = secrets.token_urlsafe(4096)
+    filled_bucket = cumulative_bucket_08 + random_bucket_10
+    del cumulative_bucket_08, random_bucket_10
+    n_char = int((input("# of characters (40960 max.): ")))
+    hash_pick = random.sample(filled_bucket, k=n_char)
+    hhg_result = "".join(hash_pick)
+    print(hhg_result)
+    return hhg_result
 
 
-hrj_hash_generator()
+hhg()
