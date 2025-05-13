@@ -10,8 +10,6 @@ The same as you would use any other BB or MA indicator. The benefit of this one 
 
 #### Source: https://www.tradingview.com/script/3vZk2XQO-Polygot-Moving-Averages/
 
-#### Jupyter Notebook: https://github.com/homerow-j/ipynb/blob/main/financial/Polygot_Moving_Averages_Pinescript.ipynb
-
 ```
 // This Pine Script® code is subject to the terms of the Mozilla Public License 2.0 at https://mozilla.org/MPL/2.0/
 // © homerow_j, and the Trading View community I copied, mnodified and learnt from.
