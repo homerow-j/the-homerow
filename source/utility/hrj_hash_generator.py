@@ -25,7 +25,7 @@ def hhg():
     cumulative_bucket = cumulative_bucket + random_bucket_07
     del random_bucket_07
     random_bucket_08 = secrets.token_urlsafe(4096)
-    cumulative_bucket_07 = cumulative_bucket + random_bucket_08
+    cumulative_bucket = cumulative_bucket + random_bucket_08
     del random_bucket_08
     random_bucket_09 = secrets.token_urlsafe(4096)
     cumulative_bucket = cumulative_bucket + random_bucket_09
