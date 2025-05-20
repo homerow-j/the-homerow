@@ -33,7 +33,8 @@ def hhg():
     random_bucket_10 = secrets.token_urlsafe(4096)
     filled_bucket = cumulative_bucket + random_bucket_10
     del cumulative_bucket, random_bucket_10
-    n_char = int((input("# of characters (40960 max.): ")))
+    total_chars = 40960
+    n_char = int((input(f"# of characters ({total_chars} max.): ")))
     hash_pick = random.sample(filled_bucket, k=n_char)
     hhg_result = "".join(hash_pick)
     print(hhg_result)
