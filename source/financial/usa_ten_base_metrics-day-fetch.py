@@ -6,7 +6,7 @@ from sqlalchemy import create_engine
 from sqlalchemy_utils import database_exists, create_database
 
 c_datetime = pd.to_datetime("today")
-cookies = {"sessionid": "xcbn5l25bwb4fy4jykuhmk0w78gbb7qm"}
+cookies = {"sessionid": ""}
 csv_dir = "csv"
 db_dir = "db"
 db_name = "usa_ten_base_metrics-day.db"
