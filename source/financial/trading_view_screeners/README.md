@@ -1,1 +1,0 @@
-# Trading View Screeners
