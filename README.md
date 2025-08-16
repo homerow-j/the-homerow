@@ -9,5 +9,4 @@ This repo acting as a website is organized as a _folder-file_ structure composed
 ## Folder Descriptions
 
 * **Data** - _mostly market data but being a collector of bits and bytes other collections will find their way there_.
-* **Musings** - _my commentary_.
 * **Source** -_various scripts and code_.

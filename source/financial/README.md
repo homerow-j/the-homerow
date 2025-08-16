@@ -9,9 +9,3 @@ In the beginning of the file are some variables that should be looked at and adj
 The other two are `csv_dir` and `db_dir` which determine where to put the respective spreadsheet and database files.
 
 If running on a unix system that using the `env` (usually /usr/bin/env) program then the script can be run on in the terminal without calling pyhon directly in the command line. Good for scripting. More should use the decades old built-in shebang of shells on unix systems.
-
-## YFinance Fetcher notebook
-
-`yfinance_fetcher.ipynb`: to quote myself "_A simple notebook for fetching market data from Yahoo! Finance, simply._"
-
-An interactive way to fetch specific market data using the  python [yfinance](https://pypi.org/project/yfinance/) library. It's use is documentated in the notebook.
